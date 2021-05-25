@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import WebzzzContentSummary from './Summary';
 import WebzzzContentOption from './OptionCard';
 import WebzzzIntroduction from './Introduction';
+import WebzzzContact from './Contact';
 import '../components/styles.scss';
 
 const WebzzzContent = () => {
@@ -45,9 +46,13 @@ const WebzzzContent = () => {
           <WebzzzContentOption data={CardCommerceWebsite}></WebzzzContentOption>
         </div>
       </div>
-      
+
       <div style={introduction}>
         <WebzzzIntroduction></WebzzzIntroduction>
+      </div>
+
+      <div className="contentWidth">
+        <WebzzzContact></WebzzzContact>
       </div>
     </Fragment>
   );
