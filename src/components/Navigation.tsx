@@ -8,6 +8,7 @@ const WebzzzHeaderNavigation = () => {
     height: '60px',
     backgroundColor: 'white',
     boxShadow: '0px 2px 1px rgba(0,0,0, 0.16)',
+    zIndex: 10,
   };
 
   const navUL = {
@@ -22,7 +23,7 @@ const WebzzzHeaderNavigation = () => {
   };
 
   // state that hold active nav item
-  const [activeId = 1, setActiveId] = useState();
+  const [activeId = 1, setActiveId] = useState<any>();
 
   return (
     <nav style={navStyle}>

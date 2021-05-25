@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Webzzz",
+    siteUrl: "https://www.webzzz.be",
+    description: "Laat bij ons jouw website maken!",
   },
   plugins: [
     "gatsby-plugin-sass",

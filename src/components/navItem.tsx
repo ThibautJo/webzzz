@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 
-const WebzzzHeaderNavigationItem = ({ clickHandler, id, active, path, itemText }) => {
+const WebzzzHeaderNavigationItem = ({ clickHandler, id, active, path, itemText }: any) => {
   // styles
   const listStyle = {
     fontSize: '16px',
