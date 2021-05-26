@@ -9,7 +9,7 @@ const WebzzzContent = () => {
   const cardsFlex = {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
-    gap: '85px',
+    gap: '40px',
     marginTop: '200px',
   };
 
@@ -35,6 +35,12 @@ const WebzzzContent = () => {
     price: 2000,
   };
 
+  const CardOnlineMarketing = {
+    title: 'E-commerce',
+    items: ['Website om te verkopen', 'Mockup', "∞ pagina's", '...', '...', 'SSL-certificaat inbegrepen'],
+    price: 2000,
+  };
+
   return (
     <Fragment>
       <div className="contentWidth">
@@ -44,6 +50,7 @@ const WebzzzContent = () => {
           <WebzzzContentOption data={CardStaticWebsite}></WebzzzContentOption>
           <WebzzzContentOption data={CardDynamicWebsite}></WebzzzContentOption>
           <WebzzzContentOption data={CardCommerceWebsite}></WebzzzContentOption>
+          {/* <WebzzzContentOption data={CardOnlineMarketing}></WebzzzContentOption> */}
         </div>
       </div>
 

@@ -1,0 +1,121 @@
+.contentBox {
+  padding: 20px 0px;
+
+  .introTitle {
+    margin: 0px;
+    font-size: 50px;
+    font-weight: 400;
+    padding-bottom: 13px;
+  }
+
+  .introTitleBorder {
+    width: 160px;
+    height: 5px;
+    background-color: #d93d04;
+  }
+
+  .contactContent {
+    margin-top: 100px;
+    display: flex;
+
+    .form {
+      flex: 3;
+
+      .inputGroup {
+        display: flex;
+        gap: 75px;
+        margin-bottom: 30px;
+
+        input[type='text'],
+        input[type='email'] {
+          display: block;
+          width: 100%;
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;
+          transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+      }
+
+      .textAreaGroup {
+        label {
+          display: block;
+          margin: 5px 0px;
+        }
+
+        textarea {
+          display: inline;
+          width: 100%;
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;
+          transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+          box-sizing: border-box;
+        }
+      }
+
+      button {
+        display: block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        background-color: #f2cd13;
+        border: 1px solid #545871;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+          box-shadow 0.15s ease-in-out;
+
+        float: right;
+        margin-top: 20px;
+      }
+    }
+
+    .line {
+      flex: 1;
+
+      div {
+        width: 1px;
+        height: 100%;
+        margin: auto;
+        background-color: #707070;
+      }
+    }
+
+    .credentials {
+      flex: 2;
+
+      .userCredential {
+        margin-bottom: 35px;
+
+        .name {
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 20px;
+          color: #868e96;
+          margin: 0px 0px 10px 0px;
+        }
+
+        .linkItem {
+          display: flex;
+          align-items: center;
+          margin: 5px 0px;
+          a {
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}
