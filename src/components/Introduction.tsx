@@ -4,6 +4,8 @@ import './styles.scss';
 const WebzzzIntroduction = (props: any) => {
   const svgStyle = {
     display: 'block',
+    width: '100%',
+    height: 'auto',
   };
 
   const box = {

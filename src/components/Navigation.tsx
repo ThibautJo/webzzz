@@ -32,28 +32,28 @@ const WebzzzHeaderNavigation = () => {
           clickHandler={setActiveId}
           id={1}
           path="#contact"
-          active={activeId === 1 ? 'activeLink' : 'InactiveLink'}
+          active={activeId === 1 ? true : false}
           itemText="Home"></WebzzzHeaderNavigationItem>
 
         <WebzzzHeaderNavigationItem
           clickHandler={setActiveId}
           id={2}
           path="#contact"
-          active={activeId === 2 ? 'activeLink' : 'InactiveLink'}
+          active={activeId === 2 ? true : false}
           itemText="Wie zijn wij?"></WebzzzHeaderNavigationItem>
 
         <WebzzzHeaderNavigationItem
           clickHandler={setActiveId}
           id={3}
           path="#contact"
-          active={activeId === 3 ? 'activeLink' : 'InactiveLink'}
+          active={activeId === 3 ? true : false}
           itemText="Wat doen wij?"></WebzzzHeaderNavigationItem>
 
         <WebzzzHeaderNavigationItem
           clickHandler={setActiveId}
           id={4}
           path="#contact"
-          active={activeId === 4 ? 'activeLink' : 'InactiveLink'}
+          active={activeId === 4 ? true : false}
           itemText="Contacteer ons"></WebzzzHeaderNavigationItem>
       </ul>
     </nav>

@@ -1,11 +1,14 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import checkIcon from '../images/check.svg';
 
 const WebzzzContentSummary = () => {
-  const summaryTitle = {
-    fontSize: '50px',
-    fontWeight: 400,
-  };
+
+  const Title = styled.h1`
+    font-size: 50px;
+    font-weight: 400;
+    `;
+
   const summaryItem = {
     fontSize: '26px',
     fontWeight: 400,
@@ -23,7 +26,7 @@ const WebzzzContentSummary = () => {
 
   return (
     <section>
-      <h1 style={summaryTitle}>Laat je website maken!</h1>
+      <Title>Laat je website maken!</Title>
       <div>
         <p style={summaryItem}>
           <img src={checkIcon} alt="check" style={summaryIcon} /> Goedkoop

@@ -1,24 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
 import './styles.scss';
 
 const WebzzzHeaderNavigationItem = ({ clickHandler, id, active, path, itemText }: any) => {
-  // styles
-  const listStyle = {
-    fontSize: '16px',
-    paddingBottom: '3px',
-  };
 
-  const anchor = {
-    textDecoration: 'none',
-    color: 'black',
-  };
+  const ListItem = styled.li`
+    font-size: 16px;
+    padding-bottom: 3px;
+    border-bottom: ${() => active === true ? "3px solid #d93d04" : "3px solid transparent"};
+  `;
+
+  const Anchor = styled.a`
+    text-decoration: none;
+    color: black;
+  `;
 
   return (
-    <li style={listStyle} className={active}>
-      <a href={path} style={anchor} onClick={() => clickHandler(id)} onKeyDown={() => clickHandler(id)}>
+    <ListItem>
+      <Anchor href={path} onClick={() => clickHandler(id)} onKeyDown={() => clickHandler(id)}>
         {itemText}
-      </a>
-    </li>
+      </Anchor>
+    </ListItem>
   );
 };
 
