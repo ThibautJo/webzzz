@@ -1,33 +1,34 @@
 import React, { useState } from 'react';
 import WebzzzHeaderNavigationItem from './navItem';
+import styled from 'styled-components';
 
 const WebzzzHeaderNavigation = () => {
   // styles
-  const navStyle = {
-    width: '100%',
-    height: '60px',
-    backgroundColor: 'white',
-    boxShadow: '0px 2px 1px rgba(0,0,0, 0.16)',
-    zIndex: 10,
-  };
+  const Nav = styled.nav`
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.16);
+    z-index: 10;
+  `;
 
-  const navUL = {
-    listStyleType: 'none',
-    margin: '0px',
-    padding: '0px 316px',
-    display: 'flex',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    gap: '60px',
-  };
+  const UL = styled.ul`
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px 316px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 60px;
+  `;
 
   // state that hold active nav item
   const [activeId = 1, setActiveId] = useState<any>();
 
   return (
-    <nav style={navStyle}>
-      <ul style={navUL}>
+    <Nav>
+      <UL>
         <WebzzzHeaderNavigationItem
           clickHandler={setActiveId}
           id={1}
@@ -55,8 +56,8 @@ const WebzzzHeaderNavigation = () => {
           path="#contact"
           active={activeId === 4 ? true : false}
           itemText="Contacteer ons"></WebzzzHeaderNavigationItem>
-      </ul>
-    </nav>
+      </UL>
+    </Nav>
   );
 };
 

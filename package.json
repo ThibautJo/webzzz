@@ -14,6 +14,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@svgr/webpack": "^5.5.0",
     "@types/react": "^17.0.6",
     "babel-plugin-styled-components": "^1.12.0",
     "css.escape": "^1.5.1",

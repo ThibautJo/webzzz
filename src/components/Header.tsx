@@ -1,40 +1,31 @@
-// Step 1: Import React
 import React, { Fragment } from 'react';
 import logo from '../images/webzzzLogo.svg';
+import WebzzzLogoBackground from '../images/svg/backgroundWebzzzLogo.svg';
+import styled from 'styled-components';
 import WebzzzHeaderNavigation from './Navigation';
 
 const WebzzzHeader = () => {
-  // styles
-  let webzzzSvg = {
-    position: 'absolute' as const,
-  };
+  const SVGLogoBackground = styled.img.attrs((props) => ({
+    src: WebzzzLogoBackground,
+  }))`
+    position: absolute;
+  `;
 
-  let logoStyle = {
-    width: '394.53px',
-    height: '134.53px',
-    position: 'absolute' as const,
-    top: '7.5%',
-    left: ' 12%',
-  };
+  const Logo = styled.img.attrs((props) => ({
+    alt: 'Webzzz logo',
+    src: logo,
+  }))`
+    width: 394.53px;
+    height: 134.53px;
+    position: absolute;
+    top: 7.5%;
+    left: 12%;
+  `;
 
   return (
     <Fragment>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        style={webzzzSvg}
-        width="982.194"
-        height="316.004"
-        viewBox="0 0 982.194 316.004">
-        <path
-          id="Path_2887"
-          data-name="Path 2887"
-          d="M8,313,990.194-3H8Z"
-          transform="translate(-8 3.004)"
-          fill="#f2cd13"
-        />
-      </svg>
-
-      <img src={logo} style={logoStyle} alt="Webzzz logo" />
+      <SVGLogoBackground></SVGLogoBackground>
+      <Logo></Logo>
       <WebzzzHeaderNavigation></WebzzzHeaderNavigation>
     </Fragment>
   );

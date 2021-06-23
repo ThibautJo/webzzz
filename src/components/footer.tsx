@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
-import './styles.scss';
+import styled from 'styled-components';
 
 const WebzzzFooter = (props: any) => {
-  const footer = {
-    width: '100%',
-    marginTop: '100px',
-  };
-  return <div style={footer}></div>;
+  const Footer = styled.div`
+    width: 100%;
+    margin-top: 100px;
+  `;
+
+  return <Footer></Footer>;
 };
 
 export default WebzzzFooter;

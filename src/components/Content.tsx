@@ -4,18 +4,24 @@ import WebzzzContentOption from './OptionCard';
 import WebzzzIntroduction from './Introduction';
 import WebzzzContact from './Contact';
 import '../components/styles.scss';
+import styled from 'styled-components';
 
 const WebzzzContent = () => {
-  const cardsFlex = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr',
-    gap: '40px',
-    marginTop: '200px',
-  };
+  const Content = styled.div`
+    width: 1400px;
+    margin: auto;
+  `;
 
-  const introduction = {
-    marginTop: '100px',
-  };
+  const CardCollection = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-top: 200px;
+  `;
+
+  const Introduction = styled.div`
+    margin-top: 100px;
+  `;
 
   const CardStaticWebsite = {
     title: 'Statisch',
@@ -43,24 +49,24 @@ const WebzzzContent = () => {
 
   return (
     <Fragment>
-      <div className="contentWidth">
+      <Content>
         <WebzzzContentSummary></WebzzzContentSummary>
 
-        <div style={cardsFlex}>
+        <CardCollection>
           <WebzzzContentOption data={CardStaticWebsite}></WebzzzContentOption>
           <WebzzzContentOption data={CardDynamicWebsite}></WebzzzContentOption>
           <WebzzzContentOption data={CardCommerceWebsite}></WebzzzContentOption>
           {/* <WebzzzContentOption data={CardOnlineMarketing}></WebzzzContentOption> */}
-        </div>
-      </div>
+        </CardCollection>
+      </Content>
 
-      <div style={introduction}>
+      <Introduction>
         <WebzzzIntroduction></WebzzzIntroduction>
-      </div>
+      </Introduction>
 
-      <div className="contentWidth">
+      <Content>
         <WebzzzContact></WebzzzContact>
-      </div>
+      </Content>
     </Fragment>
   );
 };
