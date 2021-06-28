@@ -5,6 +5,8 @@ const WebzzzIntroduction = (props: any) => {
   const Section = styled.section`
     width: 100%;
     background-color: #f2cd13;
+
+    padding-top: 75px;
   `;
 
   const Content = styled.div`

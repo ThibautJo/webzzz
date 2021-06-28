@@ -26,6 +26,10 @@ const WebzzzContent = () => {
     background-color: #f2cd13;
     margin-top: -50px;
     height: 100px;
+
+    position: absolute;
+    width: 100%;
+    z-index: -1;
   `;
 
   const SVGIntroduction = styled.img.attrs((props) => ({
