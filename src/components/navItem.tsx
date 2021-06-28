@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import './styles.scss';
 
 const WebzzzHeaderNavigationItem = ({ clickHandler, id, active, path, itemText }: any) => {
 

@@ -3,12 +3,13 @@ import WebzzzContentSummary from './Summary';
 import WebzzzContentOption from './OptionCard';
 import WebzzzIntroduction from './Introduction';
 import WebzzzContact from './Contact';
-import '../components/styles.scss';
 import styled from 'styled-components';
+
+import SVGFullWidthFade from '../images/svg/fullWidthFadeDown.svg';
 
 const WebzzzContent = () => {
   const Content = styled.div`
-    width: 1400px;
+    width: ${(props) => props.theme.breakPoints.large};
     margin: auto;
   `;
 
@@ -19,30 +20,50 @@ const WebzzzContent = () => {
     margin-top: 200px;
   `;
 
-  const Introduction = styled.div`
-    margin-top: 100px;
+  const Introduction = styled.div``;
+
+  const Spacer = styled.div`
+    background-color: #f2cd13;
+    margin-top: -50px;
+    height: 100px;
+  `;
+
+  const SVGIntroduction = styled.img.attrs((props) => ({
+    src: SVGFullWidthFade,
+  }))`
+    display: block;
+    width: 100%;
+    height: auto;
+
+    margin-top: -150px;
+    position: absolute;
+    z-index: -1;
   `;
 
   const CardStaticWebsite = {
     title: 'Statisch',
-    items: ['Standaard website', 'Mockup', "5 pagina's", '...', '...', 'SSL-certificaat inbegrepen'],
+    description: 'Een standaard website met statische content.',
+    items: ['Standaard website', 'Mockup', "5 pagina's", 'SSL-certificaat inbegrepen'],
     price: 400,
   };
 
   const CardDynamicWebsite = {
     title: 'Dynamisch',
-    items: ['Website met database', 'Mockup', "10 pagina's", '...', '...', 'SSL-certificaat inbegrepen'],
+    description: 'Een website met up-to-date content.',
+    items: ['Website met database', 'Mockup', "10 pagina's", 'SSL-certificaat inbegrepen'],
     price: 800,
   };
 
   const CardCommerceWebsite = {
     title: 'E-commerce',
-    items: ['Website om te verkopen', 'Mockup', "∞ pagina's", '...', '...', 'SSL-certificaat inbegrepen'],
+    description: 'Een website waar goederen verkocht kan op worden.',
+    items: ['Website om te verkopen', 'Mockup', "∞ pagina's", 'SSL-certificaat inbegrepen'],
     price: 2000,
   };
 
   const CardOnlineMarketing = {
     title: 'E-commerce',
+    description: '',
     items: ['Website om te verkopen', 'Mockup', "∞ pagina's", '...', '...', 'SSL-certificaat inbegrepen'],
     price: 2000,
   };
@@ -59,6 +80,10 @@ const WebzzzContent = () => {
           {/* <WebzzzContentOption data={CardOnlineMarketing}></WebzzzContentOption> */}
         </CardCollection>
       </Content>
+
+      {/* We need to implement yellow svg partly inside the card section and extend to introduction */}
+      <SVGIntroduction></SVGIntroduction>
+      <Spacer></Spacer>
 
       <Introduction>
         <WebzzzIntroduction></WebzzzIntroduction>

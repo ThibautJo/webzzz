@@ -1,24 +1,14 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-import SVGFullWidthFade from '../images/svg/fullWidthFadeDown.svg';
-
 const WebzzzIntroduction = (props: any) => {
-  const SVGIntroduction = styled.img.attrs((props) => ({
-    src: SVGFullWidthFade,
-  }))`
-    display: block;
-    width: 100%;
-    height: auto;
-  `;
-
   const Section = styled.section`
     width: 100%;
     background-color: #f2cd13;
   `;
 
   const Content = styled.div`
-    width: 1400px;
+    width: ${(props) => props.theme.breakPoints.large};
     margin: auto;
     padding: 20px 0px;
   `;
@@ -38,7 +28,6 @@ const WebzzzIntroduction = (props: any) => {
 
   return (
     <Fragment>
-      <SVGIntroduction></SVGIntroduction>
       <Section>
         <Content>
           <IntroTitle>Wie zien wij?</IntroTitle>

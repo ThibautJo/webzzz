@@ -1,94 +1,100 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
+import styled from 'styled-components';
+
 interface propsCard {
   title: string;
+  description: string;
   items: Array<string>;
   price: number;
 }
 
 const WebzzzContentOption = (props: any) => {
-  const card = {
-    width: 'auto',
-    height: 'auto',
-    padding: '10px',
-    border: '5px solid #F2CD13',
-    borderRadius: '25px',
-    backgroundColor: 'white',
-  };
+  /**
+   * box shadows
+   */
 
-  const cardTitle = {
-    width: '100%',
-    textAlign: 'center' as const,
-    fontSize: '32px',
-    fontWeight: 900,
-    marginTop: '0px',
-  };
+  //  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  // box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
-  const cardSummary = {
-    fontSize: '22px',
-    fontWeight: 900,
-    color: '#686868',
-    paddingLeft: '30px',
-  };
+  const Box = styled.div`
+    min-height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+  `;
 
-  const cardParagraph = {
-    margin: '16px 0px',
-  };
+  const BoxHeader = styled.div`
+    border-bottom: 1px solid rgba(27, 31, 35, 0.15);
+    padding: 20px;
+  `;
 
-  const priceTag = {
-    fontSize: '22px',
-    fontWeight: 900,
-    margin: '60px 0px',
-    color: '#D96704',
-    textAlign: 'center' as const,
-  };
+  const BoxBody = styled.div`
+    padding: 10px 20px;
+  `;
 
-  const priceTagValue = {
-    fontSize: '38px',
-  };
+  const BodyFooter = styled.div`
+    padding: 10px 20px 30px 20px;
+    text-align: right;
 
-  const cardButton = {
-    width: '100%',
-    height: '65px',
-    borderRadius: '23px',
-    backgroundColor: '#F2CD13',
-    color: '#686868',
-    fontSize: '24px',
-    fontWeight: 900,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center' as const,
-  };
+    .priceDisplay {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  `;
 
-  const propsObj: propsCard = props.data;
+  const ContactButton = styled.button`
+    background-color: #f2cd13;
+    color: black;
+    font-size: 20px;
+    border: none;
+    border-radius: 24px;
+    padding: 5px 10px;
+    cursor: pointer;
+  `;
 
-  const itemList = propsObj.items.map((item, index) => {
-    return (
-      <p style={cardParagraph} key={index}>
-        {item}
-      </p>
-    );
+  const Title = styled.h1`
+    font-size: 26px;
+    margin: 0px;
+  `;
+
+  const Description = styled.p`
+    font-size: 13px;
+    margin-bottom: 0px;
+  `;
+
+  const CardSummaryItem = styled.p`
+    font-size: 15px;
+    color: rgba(39, 40, 44, 0.7);
+  `;
+
+  const { title, description, items, price }: propsCard = props.data;
+
+  const itemList = items.map((item, index) => {
+    return <CardSummaryItem key={index}>{item}</CardSummaryItem>;
   });
 
   return (
-    <section>
-      <div style={card}>
-        <h1 style={cardTitle}>{propsObj.title}</h1>
-        <div style={cardSummary}>{itemList}</div>
-        <p style={priceTag}>
-          VANAF <span style={priceTagValue}>€ {propsObj.price}</span>
-        </p>
+    <Box>
+      <BoxHeader>
+        <Title> {title} </Title>
+        <Description>{description}</Description>
+      </BoxHeader>
+      <BoxBody>{itemList}</BoxBody>
+      <BodyFooter>
+        <p className="priceDisplay">€ 400.00</p>
 
-        <div style={cardButton}>Contacteer</div>
-      </div>
-    </section>
+        <ContactButton>Contacteer</ContactButton>
+      </BodyFooter>
+    </Box>
   );
 };
 
 WebzzzContentOption.propTypes = {
   data: PropTypes.shape({
     title: PropTypes.string,
+    description: PropTypes.string,
     items: PropTypes.array,
     price: PropTypes.number,
   }),
