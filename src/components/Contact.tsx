@@ -1,10 +1,10 @@
-import React from 'react';
-import linkedInLogo from '../images/linkedin.svg';
-import mailLogo from '../images/mail.svg';
+import React from "react";
+import linkedInLogo from "../images/linkedin.svg";
+import mailLogo from "../images/mail.svg";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const WebzzzContact = (props: any) => {
+const WebzzzContact = () => {
   const Section = styled.section`
     margin-top: 75px;
   `;
@@ -31,8 +31,8 @@ const WebzzzContact = (props: any) => {
     display: flex;
   `;
 
-  const Form = styled.form.attrs((props) => ({
-    action: '#',
+  const Form = styled.form.attrs(() => ({
+    action: "#",
   }))`
     flex: 3;
   `;
@@ -62,19 +62,12 @@ const WebzzzContact = (props: any) => {
 
   const TextAreaGroup = styled.div``;
 
-  const Label = styled.label.attrs((props) => ({
-    htmlFor: props.id,
-  }))`
-    display: block;
-    margin: 5px 0px;
-  `;
-
   const TextArea = styled.textarea.attrs((props) => ({
     id: props.id,
-    cols: 10,
-    rows: 5,
+    cols: props.cols,
+    rows: props.rows,
   }))`
-    display: inline;
+    display: block;
     width: 100%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
@@ -86,6 +79,7 @@ const WebzzzContact = (props: any) => {
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
   `;
 
   const Button = styled.button`
@@ -99,8 +93,8 @@ const WebzzzContact = (props: any) => {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-      box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
     float: right;
     margin-top: 20px;
@@ -161,8 +155,12 @@ const WebzzzContact = (props: any) => {
             </InputGroup>
 
             <TextAreaGroup>
-              <Label htmlFor="textArea"></Label>
-              <TextArea id="textArea" cols={10} rows={5}></TextArea>
+              <TextArea
+                id="textArea"
+                cols={10}
+                rows={5}
+                placeholder="Bericht"
+              ></TextArea>
             </TextAreaGroup>
 
             <Button>Verzenden</Button>
@@ -177,22 +175,26 @@ const WebzzzContact = (props: any) => {
               <p className="name">Thibaut Joukes</p>
               <p className="linkItem">
                 <img src={linkedInLogo} alt="linkedIn" />
-                <a href="https://www.linkedin.com/in/thibaut-joukes/">Thibaut Joukes</a>
+                <a href="https://www.linkedin.com/in/thibaut-joukes/">
+                  Thibaut Joukes
+                </a>
               </p>
               <p className="linkItem">
                 <img src={mailLogo} alt="e-mail" />
-                <a href="mailto: thibautjoukes@gmail.com">Stuur email.</a>
+                <a href="mailto: thibautjoukes@gmail.com">Stuur email</a>
               </p>
             </UserCredential>
             <UserCredential>
-              <p className="name">Kjelle Geysbrechts</p>
+              <p className="name">Kjelle Gyesbreghs</p>
               <p className="linkItem">
                 <img src={linkedInLogo} alt="linkedIn" />
-                <a href="https://www.linkedin.com/in/thibaut-joukes/">Kjelle Geysbrechts</a>
+                <a href="https://www.linkedin.com/in/kjelle-gyesbreghs/">
+                  Kjelle Gyesbreghs
+                </a>
               </p>
               <p className="linkItem">
                 <img src={mailLogo} alt="e-mail" />
-                <a href="mailto: thibautjoukes@gmail.com">Stuur email.</a>
+                <a href="mailto: gyesbreghskjelle@hotmail.com">Stuur email</a>
               </p>
             </UserCredential>
           </Credentials>
