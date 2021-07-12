@@ -19,10 +19,12 @@ const IndexPage = () => {
     fonts: ['sans-serif', 'Roboto'],
     fontSizes: {
       small: '1em',
+      small2: '1.6em',
       medium: '2em',
       large: '3em',
     },
     colors: {
+      yellow: '#F2CD13',
       light: '#F2DA91',
       darkLight: '#F29F05',
       orange: '#D96704',
@@ -31,6 +33,7 @@ const IndexPage = () => {
       white: 'white',
       black: 'black',
       lightGrey: '#868e96',
+      darkGrey: '#868e96',
     },
     breakPoints: {
       large: '1170px',

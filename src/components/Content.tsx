@@ -7,43 +7,43 @@ import styled from 'styled-components';
 
 import SVGFullWidthFade from '../images/svg/fullWidthFadeDown.svg';
 
+const Content = styled.div`
+  width: ${(props) => props.theme.breakPoints.large};
+  margin: auto;
+`;
+
+const CardCollection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-top: 200px;
+`;
+
+const Introduction = styled.div``;
+
+const Spacer = styled.div`
+  background-color: #f2cd13;
+  margin-top: -50px;
+  height: 100px;
+
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+`;
+
+const SVGIntroduction = styled.img.attrs((props) => ({
+  src: SVGFullWidthFade,
+}))`
+  display: block;
+  width: 100%;
+  height: auto;
+
+  margin-top: -150px;
+  position: absolute;
+  z-index: -1;
+`;
+
 const WebzzzContent = () => {
-  const Content = styled.div`
-    width: ${(props) => props.theme.breakPoints.large};
-    margin: auto;
-  `;
-
-  const CardCollection = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    margin-top: 200px;
-  `;
-
-  const Introduction = styled.div``;
-
-  const Spacer = styled.div`
-    background-color: #f2cd13;
-    margin-top: -50px;
-    height: 100px;
-
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-  `;
-
-  const SVGIntroduction = styled.img.attrs((props) => ({
-    src: SVGFullWidthFade,
-  }))`
-    display: block;
-    width: 100%;
-    height: auto;
-
-    margin-top: -150px;
-    position: absolute;
-    z-index: -1;
-  `;
-
   const CardStaticWebsite = {
     title: 'Statisch',
     description: 'Een standaard website met statische content.',

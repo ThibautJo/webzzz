@@ -1,38 +1,38 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
+const Section = styled.section`
+  width: 100%;
+  background-color: #f2cd13;
+
+  padding-top: 75px;
+`;
+
+const Content = styled.div`
+  width: ${(props) => props.theme.breakPoints.large};
+  margin: auto;
+  padding: 20px 0px;
+`;
+
+const IntroTitle = styled.h1`
+  margin: 0px;
+  font-size: 50px;
+  font-weight: 400;
+  padding-bottom: 13px;
+`;
+
+const Underline = styled.div`
+  width: 160px;
+  height: 5px;
+  background-color: #d93d04;
+`;
+
 const WebzzzIntroduction = (props: any) => {
-  const Section = styled.section`
-    width: 100%;
-    background-color: #f2cd13;
-
-    padding-top: 75px;
-  `;
-
-  const Content = styled.div`
-    width: ${(props) => props.theme.breakPoints.large};
-    margin: auto;
-    padding: 20px 0px;
-  `;
-
-  const IntroTitle = styled.h1`
-    margin: 0px;
-    font-size: 50px;
-    font-weight: 400;
-    padding-bottom: 13px;
-  `;
-
-  const Underline = styled.div`
-    width: 160px;
-    height: 5px;
-    background-color: #d93d04;
-  `;
-
   return (
     <Fragment>
       <Section>
         <Content>
-          <IntroTitle>Wie zien wij?</IntroTitle>
+          <IntroTitle>Over ons</IntroTitle>
           <Underline></Underline>
 
           <div>

@@ -1,8 +1,8 @@
-import React from "react";
-import linkedInLogo from "../images/linkedin.svg";
-import mailLogo from "../images/mail.svg";
+import React from 'react';
+import linkedInLogo from '../images/linkedin.svg';
+import mailLogo from '../images/mail.svg';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const WebzzzContact = () => {
   const Section = styled.section`
@@ -32,7 +32,7 @@ const WebzzzContact = () => {
   `;
 
   const Form = styled.form.attrs(() => ({
-    action: "#",
+    action: '#',
   }))`
     flex: 3;
   `;
@@ -93,8 +93,8 @@ const WebzzzContact = () => {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
 
     float: right;
     margin-top: 20px;
@@ -155,12 +155,7 @@ const WebzzzContact = () => {
             </InputGroup>
 
             <TextAreaGroup>
-              <TextArea
-                id="textArea"
-                cols={10}
-                rows={5}
-                placeholder="Bericht"
-              ></TextArea>
+              <TextArea id="textArea" cols={10} rows={5} placeholder="Bericht"></TextArea>
             </TextAreaGroup>
 
             <Button>Verzenden</Button>
@@ -175,9 +170,7 @@ const WebzzzContact = () => {
               <p className="name">Thibaut Joukes</p>
               <p className="linkItem">
                 <img src={linkedInLogo} alt="linkedIn" />
-                <a href="https://www.linkedin.com/in/thibaut-joukes/">
-                  Thibaut Joukes
-                </a>
+                <a href="https://www.linkedin.com/in/thibaut-joukes/">Thibaut Joukes</a>
               </p>
               <p className="linkItem">
                 <img src={mailLogo} alt="e-mail" />
@@ -188,9 +181,7 @@ const WebzzzContact = () => {
               <p className="name">Kjelle Gyesbreghs</p>
               <p className="linkItem">
                 <img src={linkedInLogo} alt="linkedIn" />
-                <a href="https://www.linkedin.com/in/kjelle-gyesbreghs/">
-                  Kjelle Gyesbreghs
-                </a>
+                <a href="https://www.linkedin.com/in/kjelle-gyesbreghs/">Kjelle Gyesbreghs</a>
               </p>
               <p className="linkItem">
                 <img src={mailLogo} alt="e-mail" />
