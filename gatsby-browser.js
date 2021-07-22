@@ -1,4 +1,4 @@
 // Import styles
-import "./styles.scss"
+import "./src/styles/global.css"
 
 // webpack config
