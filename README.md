@@ -14,11 +14,11 @@ For styling we went for a mix of <span style="background-color:#FFFF001A;">TailW
 
 <ins>TailwindCSS</ins> is handy for quickly styling elements and reducing the number of lines of code, but might create long lines of code whenever many classes are applied to an element. (This might be fixed with npm package classNames OR in combination with styled-components). The downside is the learning curve.
 
-<ins>Styled-components</ins> is handy to to render elements with animations or to style elements which are more complex. We could also use styled components for it's built-in themeProvider, which means we can change colors, font-sizes, fonts... on the entire page within seconds (which can also be done in global styling).
+<ins>Styled-components</ins> is handy to to render elements with animations or to style elements which are more complex. We could also use styled components for it's built-in themeProvider, which means we can change colors, font-sizes, fonts... on the entire page within seconds (which can also be done in global styling (tailwind css theme)).
 
 <br/>
 
-Preferably we would use TailWindCSS as much as possible because it scores better in performance (it's pure css). 
+Preferably we would use TailWindCSS as much as possible because it scores better in performance (it's pure css).
 
 ## GatsbyJS plugins used
 
