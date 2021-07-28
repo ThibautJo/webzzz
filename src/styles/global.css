@@ -2,10 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    margin: 0px;
-    font-family: 'Arial';
-    background-color: #F9F9F9;
-    width: 100%;
-    overflow-x: hidden;
+/* Create new global classes within tailwind */
+@layer utilities {
+}
+
+body {
+  margin: 0px;
+  font-family: 'Arial';
+  background-color: #f9f9f9;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+input[type='text'],input[type='email'] {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.sendButton {
+  display: block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #f2cd13;
+  border: 1px solid #545871;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
