@@ -2,68 +2,17 @@ import React, { Fragment, useState } from 'react';
 import WebzzzHeaderNavigationItem from './navItem';
 import menuOpenIcon from '../images/mobileMenu.svg';
 import menuCloseIcon from '../images/closeMenu.svg';
-
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const Nav = styled.nav`
-  width: 100%;
-  height: 60px;
-  background-color: white;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.16);
-  z-index: 10;
-
-  @media (max-width: ${(props) => props.theme.breakPoints.large}) {
-    display: flex;
-    justify-content: flex-end;
-  }
 `;
 
-const UL = styled.ul`
-  @media (min-width: ${(props) => props.theme.breakPoints.large}) {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px 316px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 60px;
-  }
-
-  @media (max-width: ${(props) => props.theme.breakPoints.large}) {
-    display: none;
-  }
-`;
-
-const ULMobile = styled.ul<any>`
-  @media (min-width: ${(props) => props.theme.breakPoints.large}) {
-    display: none;
-  }
-
-  @media (max-width: ${(props) => props.theme.breakPoints.large}) {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-
-    ${(props) =>
-      props.collapsed &&
-      css`
-        display: none;
-      `}
-  }
-`;
-
-const MobileMenuOpenButton = styled.img.attrs(({ collapsed }: any) => ({
+const CollapseIcon = styled.img.attrs(({ collapsed }: any) => ({
+  alt: 'Collapse icon',
   src: collapsed ? menuOpenIcon : menuCloseIcon,
 }))<any>`
-  width: 28px;
-  margin-right: 20px;
-
-  @media (min-width: ${(props) => props.theme.breakPoints.large}) {
-    display: none;
-  }
+  transform: translate(0, -50%);
 `;
 
 const WebzzzHeaderNavigation = () => {
@@ -74,17 +23,20 @@ const WebzzzHeaderNavigation = () => {
 
   return (
     <Fragment>
-      <Nav>
-        <MobileMenuOpenButton
-          onClick={() => setCollapseState(!menuCollapsed)}
-          collapsed={menuCollapsed}></MobileMenuOpenButton>
-        <UL>
+      <Nav className="w-full h-14 flex justify-end bg-white relative z-10 lg:block">
+        <CollapseIcon
+          className="absolute top-2/4 block w-7 mr-5 lg:hidden"
+          collapsed={menuCollapsed}
+          onClick={() => setCollapseState(!menuCollapsed)}></CollapseIcon>
+
+        <ul
+          className={`w-full m-0 mt-14 p-0 list-none flex flex-col lg:flex lg:flex-row lg:items-center lg:justify-end lg:mt-0 lg:h-full lg:pr-80 lg:gap-14
+                    ${menuCollapsed === true ? 'hidden lg:block' : 'block'}`}>
           <WebzzzHeaderNavigationItem
             clickHandler={setActiveId}
             id={1}
             path="#contact"
             active={activeId === 1 ? true : false}
-            mobile={false}
             itemText="Home"></WebzzzHeaderNavigationItem>
 
           <WebzzzHeaderNavigationItem
@@ -92,7 +44,6 @@ const WebzzzHeaderNavigation = () => {
             id={2}
             path="#contact"
             active={activeId === 2 ? true : false}
-            mobile={false}
             itemText="Over ons"></WebzzzHeaderNavigationItem>
 
           <WebzzzHeaderNavigationItem
@@ -100,36 +51,9 @@ const WebzzzHeaderNavigation = () => {
             id={4}
             path="#contact"
             active={activeId === 4 ? true : false}
-            mobile={false}
             itemText="Contacteer ons"></WebzzzHeaderNavigationItem>
-        </UL>
+        </ul>
       </Nav>
-
-      <ULMobile collapsed={menuCollapsed}>
-        <WebzzzHeaderNavigationItem
-          clickHandler={setActiveId}
-          id={1}
-          path="#contact"
-          active={activeId === 1 ? true : false}
-          mobile={true}
-          itemText="Home"></WebzzzHeaderNavigationItem>
-
-        <WebzzzHeaderNavigationItem
-          clickHandler={setActiveId}
-          id={2}
-          path="#contact"
-          active={activeId === 2 ? true : false}
-          mobile={true}
-          itemText="Over ons"></WebzzzHeaderNavigationItem>
-
-        <WebzzzHeaderNavigationItem
-          clickHandler={setActiveId}
-          id={4}
-          path="#contact"
-          active={activeId === 4 ? true : false}
-          mobile={true}
-          itemText="Contacteer ons"></WebzzzHeaderNavigationItem>
-      </ULMobile>
     </Fragment>
   );
 };

@@ -9,12 +9,6 @@ import WebzzzFooter from '../components/footer';
 
 // Step 2: Define your component
 const IndexPage = () => {
-  const content = {
-    height: 'auto',
-    margin: 'auto',
-    marginTop: '250px',
-  };
-
   const theme = {
     fonts: ['sans-serif', 'Roboto'],
     fontSizes: {
@@ -52,7 +46,7 @@ const IndexPage = () => {
         <aside>
           <WebzzzAsideMockup></WebzzzAsideMockup>
         </aside>
-        <div style={content}>
+        <div className="mt-60 h-auto">
           <WebzzzContent></WebzzzContent>
         </div>
         <footer>

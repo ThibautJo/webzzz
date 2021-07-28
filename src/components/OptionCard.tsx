@@ -1,6 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-
 import styled from 'styled-components';
 
 interface propsCard {
@@ -19,85 +17,40 @@ interface propsCard {
 // box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
 const Box = styled.div`
-  min-height: 400px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  background-color: white;
 `;
 
 const BoxHeader = styled.div`
   border-bottom: 1px solid rgba(27, 31, 35, 0.15);
-  padding: 20px;
-`;
-
-const BoxBody = styled.div`
-  padding: 10px 20px;
-`;
-
-const BodyFooter = styled.div`
-  padding: 10px 20px 30px 20px;
-  text-align: right;
-
-  .priceDisplay {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-`;
-
-const ContactButton = styled.button`
-  background-color: #f2cd13;
-  color: black;
-  font-size: 20px;
-  border: none;
-  border-radius: 24px;
-  padding: 5px 10px;
-  cursor: pointer;
-`;
-
-const Title = styled.h1`
-  font-size: 26px;
-  margin: 0px;
-`;
-
-const Description = styled.p`
-  font-size: 13px;
-  margin-bottom: 0px;
-`;
-
-const CardSummaryItem = styled.p`
-  font-size: 15px;
-  color: rgba(39, 40, 44, 0.7);
 `;
 
 const WebzzzContentOption = (props: any) => {
   const { title, description, items, price }: propsCard = props.data;
 
   const itemList = items.map((item, index) => {
-    return <CardSummaryItem key={index}>{item}</CardSummaryItem>;
+    return (
+      <p key={index} className='text-base text-lightGrey'>
+        {item}
+      </p>
+    );
   });
 
   return (
-    <Box>
-      <BoxHeader>
-        <Title> {title} </Title>
-        <Description>{description}</Description>
+    <Box className='bg-white min-h-400px relative'>
+      <BoxHeader className='p-5 h-24 max-h-24'>
+        <h1 className='text-smallMedium m-0'> {title} </h1>
+        <p className='text-sm mb-0'>{description}</p>
       </BoxHeader>
-      <BoxBody>{itemList}</BoxBody>
-      <BodyFooter>
-        <p className="priceDisplay">€ 400.00</p>
+      <div className='px-5 py-2.5'>{itemList}</div>
+      <div className='p-5 text-right absolute bottom-0 right-0'>
+        <p className='text-smallMedium mb-2.5'>€ 400.00</p>
 
-        <ContactButton>Contacteer</ContactButton>
-      </BodyFooter>
+        <button className='bg-yellow text-black text-xl border-0 rounded-3xl cursor-pointer py-1.5	px-2.5'>
+          Contacteer
+        </button>
+      </div>
     </Box>
   );
-};
-
-WebzzzContentOption.propTypes = {
-  data: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    items: PropTypes.array,
-    price: PropTypes.number,
-  }),
 };
 
 export default WebzzzContentOption;

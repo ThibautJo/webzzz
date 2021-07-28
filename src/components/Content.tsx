@@ -7,20 +7,6 @@ import styled from 'styled-components';
 
 import SVGFullWidthFade from '../images/svg/fullWidthFadeDown.svg';
 
-const Content = styled.div`
-  width: ${(props) => props.theme.breakPoints.large};
-  margin: auto;
-`;
-
-const CardCollection = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  margin-top: 200px;
-`;
-
-const Introduction = styled.div``;
-
 const Spacer = styled.div`
   background-color: #f2cd13;
   margin-top: -50px;
@@ -65,37 +51,32 @@ const WebzzzContent = () => {
     price: 2000,
   };
 
-  const CardOnlineMarketing = {
-    title: 'E-commerce',
-    description: '',
-    items: ['Website om te verkopen', 'Mockup', "∞ pagina's", '...', '...', 'SSL-certificaat inbegrepen'],
-    price: 2000,
-  };
+  const summaryItems: string[] = ['Goedkoop', 'Responsief', 'Professioneel', 'Gratis support'];
 
   return (
     <Fragment>
-      <Content>
-        <WebzzzContentSummary></WebzzzContentSummary>
+      <div className='m-auto lg:w-4/6'>
+        <WebzzzContentSummary items={summaryItems}></WebzzzContentSummary>
 
-        <CardCollection>
+        <div className='grid grid-cols-3 gap-10 mt-48'>
           <WebzzzContentOption data={CardStaticWebsite}></WebzzzContentOption>
           <WebzzzContentOption data={CardDynamicWebsite}></WebzzzContentOption>
           <WebzzzContentOption data={CardCommerceWebsite}></WebzzzContentOption>
           {/* <WebzzzContentOption data={CardOnlineMarketing}></WebzzzContentOption> */}
-        </CardCollection>
-      </Content>
+        </div>
+      </div>
 
       {/* We need to implement yellow svg partly inside the card section and extend to introduction */}
       <SVGIntroduction></SVGIntroduction>
       <Spacer></Spacer>
 
-      <Introduction>
+      <div>
         <WebzzzIntroduction></WebzzzIntroduction>
-      </Introduction>
+      </div>
 
-      <Content>
+      <div className='m-auto lg:w-4/6'>
         <WebzzzContact></WebzzzContact>
-      </Content>
+      </div>
     </Fragment>
   );
 };

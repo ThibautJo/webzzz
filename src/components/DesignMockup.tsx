@@ -5,23 +5,6 @@ import styled, { keyframes } from 'styled-components';
 import mockup from '../images/mockupDesign.png';
 import mockupBackground from '../images/svg/mockupBackground.svg';
 
-const CenterMockupDesignContent = styled.div`
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  z-index: -10;
-`;
-
-const SVGMockupBackground = styled.img.attrs((props) => ({
-  src: mockupBackground,
-}))`
-  display: block;
-  width: 100%;
-  height: auto;
-`;
-
 const breatheAnimation = keyframes`
   0% { transform: translate(0,  0px); }
   50%  { transform: translate(0, 15px); }
@@ -32,9 +15,6 @@ const MockupDisplay = styled.img.attrs((props) => ({
   src: mockup,
   alt: 'Mockup design example',
 }))`
-  width: 535px;
-  height: 321px;
-
   transform: translate(-50%, -50%) scale(-1, 1);
 `;
 
@@ -54,13 +34,13 @@ const Floating = styled.div`
 const WebzzzAsideMockup = (props: any) => {
   return (
     <Fragment>
-      <CenterMockupDesignContent>
+      <div className='w-auto h-auto absolute z-0 top-0 right-0'>
         <Floating>
-          <MockupDisplay></MockupDisplay>
+          <MockupDisplay className='w-9/12'></MockupDisplay>
         </Floating>
 
-        <SVGMockupBackground></SVGMockupBackground>
-      </CenterMockupDesignContent>
+        <img className='w-full h-auto block' src={mockupBackground} />
+      </div>
     </Fragment>
   );
 };

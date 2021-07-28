@@ -1,13 +1,7 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
-
-const Footer = styled.div`
-  width: 100%;
-  margin-top: 100px;
-`;
+import React from 'react';
 
 const WebzzzFooter = (props: any) => {
-  return <Footer></Footer>;
+  return <footer className="w-full mt-24"></footer>;
 };
 
 export default WebzzzFooter;
