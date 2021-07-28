@@ -6,6 +6,7 @@ import WebzzzContact from './Contact';
 import styled from 'styled-components';
 
 import SVGFullWidthFade from '../images/svg/fullWidthFadeDown.svg';
+import WebzzzContentChildren from './contentChildren';
 
 const Spacer = styled.div`
   background-color: #f2cd13;
@@ -54,30 +55,28 @@ const WebzzzContent = () => {
   const summaryItems: string[] = ['Goedkoop', 'Responsief', 'Professioneel', 'Gratis support'];
 
   return (
-    <Fragment>
-      <div className='m-auto lg:w-4/6'>
+    <div className='mt-60 h-auto'>
+      <WebzzzContentChildren>
         <WebzzzContentSummary items={summaryItems}></WebzzzContentSummary>
+      </WebzzzContentChildren>
 
-        <div className='grid grid-cols-3 gap-10 mt-48'>
-          <WebzzzContentOption data={CardStaticWebsite}></WebzzzContentOption>
-          <WebzzzContentOption data={CardDynamicWebsite}></WebzzzContentOption>
-          <WebzzzContentOption data={CardCommerceWebsite}></WebzzzContentOption>
-          {/* <WebzzzContentOption data={CardOnlineMarketing}></WebzzzContentOption> */}
-        </div>
-      </div>
+      <WebzzzContentChildren customClasses='grid grid-cols-1 gap-10 mt-24 lg:grid-cols-3 lg:mt-48'>
+        <WebzzzContentOption data={CardStaticWebsite}></WebzzzContentOption>
+        <WebzzzContentOption data={CardDynamicWebsite}></WebzzzContentOption>
+        <WebzzzContentOption data={CardCommerceWebsite}></WebzzzContentOption>
+      </WebzzzContentChildren>
 
       {/* We need to implement yellow svg partly inside the card section and extend to introduction */}
-      <SVGIntroduction></SVGIntroduction>
-      <Spacer></Spacer>
-
-      <div>
+      <WebzzzContentChildren customClasses='w-full lg:w-full'>
+        <SVGIntroduction></SVGIntroduction>
+        <Spacer></Spacer>
         <WebzzzIntroduction></WebzzzIntroduction>
-      </div>
+      </WebzzzContentChildren>
 
-      <div className='m-auto lg:w-4/6'>
+      <WebzzzContentChildren>
         <WebzzzContact></WebzzzContact>
-      </div>
-    </Fragment>
+      </WebzzzContentChildren>
+    </div>
   );
 };
 

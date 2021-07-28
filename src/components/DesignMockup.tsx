@@ -33,15 +33,15 @@ const Floating = styled.div`
 
 const WebzzzAsideMockup = (props: any) => {
   return (
-    <Fragment>
-      <div className='w-auto h-auto absolute z-0 top-0 right-0'>
+    <aside>
+      <div className='hidden lg:block w-auto h-auto absolute z-0 top-0 right-0'>
         <Floating>
           <MockupDisplay className='w-9/12'></MockupDisplay>
         </Floating>
 
         <img className='w-full h-auto block' src={mockupBackground} />
       </div>
-    </Fragment>
+    </aside>
   );
 };
 

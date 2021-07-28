@@ -9,18 +9,17 @@ const Logo = styled.img.attrs(() => ({
   src: logo,
 }))`
   width: 394.53px;
-  height: 134.53px;
   top: 7.5%;
   left: 12%;
 `;
 
 const WebzzzHeader = () => {
   return (
-    <Fragment>
-      <img src={WebzzzLogoBackground} className="hidden md:block absolute z-20" />
-      <Logo className="hidden md:block absolute z-20"></Logo>
+    <header>
+      <img src={WebzzzLogoBackground} className="hidden lg:block absolute z-20" />
+      <Logo className="hidden lg:block absolute z-20"></Logo>
       <WebzzzHeaderNavigation></WebzzzHeaderNavigation>
-    </Fragment>
+    </header>
   );
 };
 
