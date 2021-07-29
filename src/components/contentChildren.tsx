@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 // props can override these standard classes
 const WebzzzContentChildren = (props: any) => {
