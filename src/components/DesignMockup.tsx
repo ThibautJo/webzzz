@@ -34,7 +34,7 @@ const Floating = styled.div`
 const WebzzzAsideMockup = (props: any) => {
   return (
     <aside>
-      <div className='hidden lg:block w-auto h-auto absolute z-0 top-0 right-0'>
+      <div className='hidden overflow-hidden lg:block w-auto h-auto absolute z-0 top-0 right-0'>
         <Floating>
           <MockupDisplay className='w-9/12'></MockupDisplay>
         </Floating>

@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import WebzzzHeaderNavigationItem from './navItem';
 import menuOpenIcon from '../images/mobileMenu.svg';
 import menuCloseIcon from '../images/closeMenu.svg';
+import logo from '../images/webzzzLogo.svg';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -23,35 +24,37 @@ const WebzzzHeaderNavigation = () => {
 
   return (
     <Fragment>
-      <Nav className="w-full h-14 flex justify-end bg-white relative z-10 lg:block">
+      <Nav className='w-full h-14 bg-white relative z-10 lg:block'>
+        <img src={logo} alt='Webzzz logo' className='absolute left-0 ml-5 p-2 h-full lg:hidden' />
+
         <CollapseIcon
-          className="absolute top-2/4 block w-7 mr-5 lg:hidden"
+          className='absolute top-2/4 block w-7 mr-5 right-0 lg:hidden '
           collapsed={menuCollapsed}
           onClick={() => setCollapseState(!menuCollapsed)}></CollapseIcon>
 
         <ul
-          className={`w-full m-0 mt-14 p-0 list-none flex flex-col lg:flex lg:flex-row lg:items-center lg:justify-end lg:mt-0 lg:h-full lg:pr-80 lg:gap-14
+          className={`w-full absolute m-0 mt-14 p-0 list-none flex flex-col lg:flex lg:flex-row lg:items-center lg:justify-end lg:mt-0 lg:h-full lg:pr-80 lg:gap-14
                     ${menuCollapsed === true ? 'hidden lg:block' : 'block'}`}>
           <WebzzzHeaderNavigationItem
             clickHandler={setActiveId}
             id={1}
-            path="#contact"
+            path='#contact'
             active={activeId === 1 ? true : false}
-            itemText="Home"></WebzzzHeaderNavigationItem>
+            itemText='Home'></WebzzzHeaderNavigationItem>
 
           <WebzzzHeaderNavigationItem
             clickHandler={setActiveId}
             id={2}
-            path="#contact"
+            path='#contact'
             active={activeId === 2 ? true : false}
-            itemText="Over ons"></WebzzzHeaderNavigationItem>
+            itemText='Over ons'></WebzzzHeaderNavigationItem>
 
           <WebzzzHeaderNavigationItem
             clickHandler={setActiveId}
             id={4}
-            path="#contact"
+            path='#contact'
             active={activeId === 4 ? true : false}
-            itemText="Contacteer ons"></WebzzzHeaderNavigationItem>
+            itemText='Contacteer ons'></WebzzzHeaderNavigationItem>
         </ul>
       </Nav>
     </Fragment>

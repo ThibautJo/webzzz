@@ -6,7 +6,7 @@ const WebzzzHeaderNavigationItem = ({ clickHandler, id, active, path, itemText }
     <li
       className={`text-smallMedium pb-0 border-b-0 px-0 py-2.5 text-center bg-yellow hover:bg-light
                 lg:text-base lg:bg-white lg:pb-0.5 lg:hover:bg-white 
-                ${active === true ? 'border-b-2 border-red' : 'border-b-2 border-transparent'}`}>
+                ${active === true ? 'lg:border-b-2 lg:border-red' : 'lg:border-b-2 lg:border-transparent'}`}>
       <a
         href={path}
         onClick={() => clickHandler(id)}
