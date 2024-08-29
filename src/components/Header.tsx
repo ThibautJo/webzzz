@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import logo from '../images/webzzzLogo.svg';
 import WebzzzLogoBackground from '../images/svg/backgroundWebzzzLogo.svg';
 import styled from 'styled-components';
